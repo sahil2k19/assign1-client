@@ -6,6 +6,7 @@ import Register from './pages/Register/Register';
 import Course from './pages/Course/Course';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CourseLanguage from './pages/Course/CourseLanguage';
+import Nav from './Nav';
 function App() {
   return (
     <>

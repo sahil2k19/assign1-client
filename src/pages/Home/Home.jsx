@@ -6,6 +6,7 @@ import Nav from '../../Nav';
 
 const Home = () => {
   const navigate = useNavigate();
+  const token = localStorage.getItem('token');
   const [progressData, setProgressData] = useState(JSON.parse(localStorage.getItem('progressData')));
   const [language, setLanguage] = useState('Select');
   const [error, setError] = useState(false);
@@ -31,6 +32,11 @@ const Home = () => {
     handleError(event.target.value);
     setLanguage(event.target.value);
   };
+  useEffect(() => {
+    if (!token) {
+      navigate('/login');
+    }
+  },[])
 
   // Add a useEffect hook to listen for changes in localStorage
   useEffect(() => {
